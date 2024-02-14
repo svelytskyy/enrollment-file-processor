@@ -33,7 +33,7 @@ Here's why AWS Machine Learning is important for developers:
 - See classes `LispChecker` and `LispCheckerTest`.
 
 ### 3. CSV File Processing
-- The provided solution is simplified: all CSV records from different CSV files in the input folder are loaded into RAM, processed, and then written into separate files. The current solution can handle data up to 20 GB or approximately 500 million records.
+- The provided solution is simplified: all CSV records from different CSV files in the input folder are loaded into RAM, processed, and then written into separate files. The current solution can handle data up to 20 GB or approximately 500 million records. The error csv records (with null userid or insurance company, non number version, <> 4 entries as CSV record) are written into log and seperately into error.csv files
 - If the data exceeds 20 GB, a database or another solution will be required
 - If input CSV files are constantly coming to FTP or AWS S3, it will require some streaming implementation and a FileWatcher which listens for new files and pushes them into a queue like Kafka/SQS with the file location to be processed. `FileReaders` can be implemented as `ThreadExecutorService` with a thread pool. The Producer-Consumer design pattern can also be implemented, with the Producer as the `ReaderService` and the Consumer as the `WriterService`. The Observer pattern can also be implemented.
 
