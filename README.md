@@ -25,7 +25,7 @@
 - If input CSV files are constantly coming to FTP or S3, it will require some streaming implementation and a FileWatcher which listens for new files and pushes them into a queue like Kafka/SQS with the file location to be processed. `FileReaders` can be implemented as `ThreadExecutorService` with a thread pool. The Producer-Consumer design pattern can also be implemented, with the Producer as the `ReaderService` and the Consumer as the `WriterService`. The Observer pattern can also be implemented.
 
 ### How to Run the solution#3
--mvn package
--java -jar enrollment-file-processor-1.0.0.jar ~/input ~/output
+- mvn package
+- java -jar enrollment-file-processor-1.0.0.jar ~/input ~/output
 
 
