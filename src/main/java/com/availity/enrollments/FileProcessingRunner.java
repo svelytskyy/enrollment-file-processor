@@ -6,12 +6,14 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
+/**
+ * Command-line runner class to process CSV files on application startup.
+ */
 @Component
 public class FileProcessingRunner implements CommandLineRunner {
 
     @Autowired
-    private FileProcessorService fileProcessorService;
+    private final FileProcessorService fileProcessorService;
     private static final Logger logger = LogManager.getLogger(FileProcessingRunner.class);
     @Autowired
     public FileProcessingRunner(FileProcessorService fileProcessorService) {
@@ -19,7 +21,12 @@ public class FileProcessingRunner implements CommandLineRunner {
     }
 
 
-
+    /**
+     * Executes the file processing service to process CSV files.
+     *
+     * @param args command line arguments
+     * @throws Exception if an error occurs during file processing
+     */
     @Override
     public void run(String... args) throws Exception {
         // Call the file processing service to process CSV file

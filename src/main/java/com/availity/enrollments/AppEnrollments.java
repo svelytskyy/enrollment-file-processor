@@ -8,6 +8,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * Main Spring Boot application class for enrollment processing.
+*/
+
 @SpringBootApplication
 public class AppEnrollments {
 
