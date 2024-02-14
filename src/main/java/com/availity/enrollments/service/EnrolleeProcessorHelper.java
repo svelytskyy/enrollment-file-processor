@@ -20,12 +20,15 @@ public class EnrolleeProcessorHelper {
         Map<String, SortedSet<Enrollee>>mapEnrollee = ds.getMapEnrollee();
         //New Insurance company in Data Structure
         if(mapEnrollee.get(enrollee.getInsuranceCompany()) == null){
+            //caching added users for search functionality
+            ds.getCachedUserId().add(enrollee.getUserId());
             SortedSet<Enrollee> sortedSetEnrollee = new TreeSet<>();
             sortedSetEnrollee.add(enrollee);
             mapEnrollee.put(enrollee.getInsuranceCompany(), sortedSetEnrollee);
         }else{
             Set<String> cachedUsers = ds.getCachedUserId();
             SortedSet<Enrollee> sortedSetEnrollee = ds.getMapEnrollee().get(enrollee.getInsuranceCompany());
+            //search users for duplicates with high versions only not cached in cachedUsers map
             if(!cachedUsers.contains(enrollee.getUserId())){
                 sortedSetEnrollee.add(enrollee);
                 cachedUsers.add(enrollee.getUserId());
