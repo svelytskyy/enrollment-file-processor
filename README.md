@@ -43,8 +43,8 @@ Here's why AWS Machine Learning is important for developers:
 
 ### How to Run the solution#3
 ```
-- mvn package
-- java -jar enrollment-file-processor-1.0.0.jar ~/input ~/output
+mvn package
+java -jar enrollment-file-processor-1.0.0.jar ~/input ~/output
 ```
 
 
