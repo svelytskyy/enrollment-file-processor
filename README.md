@@ -33,6 +33,8 @@ Here's why AWS Machine Learning is important for developers:
 - See classes `LispChecker` and `LispCheckerTest`.
 - More detailed explanation can be found in my udemy below course :
 - https://www.udemy.com/course/top-interview-coding-problems-rock-your-coding-1-3-weeks/
+- Problem : Valid Parentheses. Data stacking algorithm
+
 
 ### 3. CSV File Processing
 - The provided solution is simplified: all CSV records from different CSV files in the input folder are loaded into RAM, processed, and then written into separate files. The current solution can handle data up to 20 GB or approximately 500 million records. The error csv records (with null userid or insurance company, non number version, <> 5 fileds in CSV record, etc ...) are written into log and seperately into error.csv files
